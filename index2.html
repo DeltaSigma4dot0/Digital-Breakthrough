@@ -1,0 +1,171 @@
+<html >
+<head>
+  <link href="./css/main.css" rel="stylesheet">
+  <title>Predict the Weight</title>
+</head>
+<style>*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+  font-size: 62,5%;
+}
+
+
+
+.form__label {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.2rem;
+  margin-left: 2rem;
+  margin-top: 0.7rem;
+  display: block;
+  transition: all 0.3s;
+  transform: translateY(0rem);
+}
+
+.form__input {
+  font-family: 'Roboto', sans-serif;
+  color: #333;
+  font-size: 1.2rem;
+	margin: 0 auto;
+  padding: 1.5rem 2rem;
+  border-radius: 0.2rem;
+  background-color: rgb(255, 255, 255);
+  width: 40.5%;
+  display: block;
+  transition: all 0.3s;
+}
+
+.form__input:placeholder-shown + .form__label {
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transform: translateY(-4rem);
+  transform: translateY(-4rem);
+}
+
+
+body {
+    font-family: sans-serif;
+}
+
+#main {
+    color: #212736;
+    text-align: center;
+    /* display: table-cell; */
+    /* vertical-align: middle; */
+    position: relative;
+  }
+
+form {
+  position: relative;
+    margin: auto;
+    vertical-align: middle;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.block {
+  position: absolute;
+  width: 99%;
+  margin-top: 5%;
+}
+
+.but {
+  background-color: #fff;
+  color: #009ca6;
+  text-align: center;
+  font-size: 22px;
+  padding: 17px;
+  width: 42%;
+  transition: all 0.6s;
+  margin: 5px;
+  border: 2px solid;
+  border-color: #009ca6;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.but:hover {
+  background-color: #009ca6;
+      color: #fff;
+    }
+
+
+    tbody tr:nth-child (odd) {
+
+     background-color: #C9E4F6;/* фон нечетных строк */
+
+   }
+
+   tbody tr:nth-child (even) {
+
+     background-color: #B4DAF2;/* фон четных строк */
+
+   }
+
+table td, table th {
+  padding: 12px 17px;
+  border-bottom: 1px solid #009ca6;
+}
+table th {
+    background-color: #009ca6;
+    color: #fff
+}
+
+table {
+  border: 2px solid #009ca6;
+  margin: auto;
+    width: 44%;
+
+}
+
+ table tr:hover td {
+   background-color: #009ca6;
+   color: #fff;
+   transition: .5s;
+   cursor: pointer;
+}
+table tr:not(:hover) td {
+ transition: .5s;
+}
+</style>
+
+<body>
+ <div class="block">
+	<h1 id="main">Генерация названия сюжетов</h1>
+
+    <form action="{{ url_for('getprediction')}}"method="post">
+    	<input class="form__input" id="name" placeholder="Введите данные" required="" type="text" name="height" />
+        <button type="submit" class="but">Сгенерировать</button>
+    </form>
+
+   <br>
+   <br>
+
+   <table class='goog-tab' style="display: {{outputVisible}}">
+     <tbody>
+<tr><th>Сгенерированные названия</th></tr>
+<tr><td>{{output0}}</td></tr>
+<tr><td>{{output1}}</td></tr>
+<tr><td>{{output2}}</td></tr>
+<tr><td>{{output3}}</td></tr>
+<tr><td>{{output4}}</td></tr>
+<tr><td>{{output5}}</td></tr>
+<tr><td>{{output6}}</td></tr>
+<tr><td>{{output7}}</td></tr>
+<tr><td>{{output8}}</td></tr>
+<tr><td>{{output9}}</td></tr>
+<tr><td>{{output10}}</td></tr>
+<tr><td>{{output11}}</td></tr>
+<tr><td>{{output12}}</td></tr>
+<tr><td>{{output13}}</td></tr>
+<tr><td>{{output14}}</td></tr>
+   </tbody>
+   </table>
+
+ </div>
+
+
+</body>
+</html>

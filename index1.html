@@ -1,0 +1,179 @@
+<html >
+<head>
+  <link href="./css/main.css" rel="stylesheet">
+  <title>Predict the Weight</title>
+</head>
+<style>*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+  font-size: 62,5%;
+}
+
+
+
+.form__label {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.2rem;
+  margin-left: 2rem;
+  margin-top: 0.7rem;
+  display: block;
+  transition: all 0.3s;
+  transform: translateY(0rem);
+}
+
+.form__input {
+  font-family: 'Roboto', sans-serif;
+  color: #333;
+  font-size: 1.2rem;
+	margin: 0 auto;
+  padding: 1.5rem 2rem;
+  border-radius: 0.2rem;
+  background-color: rgb(255, 255, 255);
+  width: 40.5%;
+  display: block;
+  transition: all 0.3s;
+}
+
+.form__input:placeholder-shown + .form__label {
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transform: translateY(-4rem);
+  transform: translateY(-4rem);
+}
+
+
+body {
+    font-family: sans-serif;
+}
+
+#main {
+    color: #212736;
+    text-align: center;
+    /* display: table-cell; */
+    /* vertical-align: middle; */
+    position: relative;
+  }
+
+form {
+  position: relative;
+    margin: auto;
+    vertical-align: middle;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.block {
+  position: absolute;
+  width: 99%;
+  margin-top: 5%;
+}
+
+.but {
+  background-color: #fff;
+  color: #009ca6;
+  text-align: center;
+  font-size: 22px;
+  padding: 17px;
+  width: 42%;
+  transition: all 0.6s;
+  margin: 5px;
+  border: 2px solid;
+  border-color: #009ca6;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.but:hover {
+  background-color: #009ca6;
+      color: #fff;
+    }
+
+
+    tbody tr:nth-child (odd) {
+
+     background-color: #C9E4F6;/* фон нечетных строк */
+
+   }
+
+   tbody tr:nth-child (even) {
+
+     background-color: #B4DAF2;/* фон четных строк */
+
+   }
+
+table td, table th {
+  padding: 12px 17px;
+  border-bottom: 1px solid #009ca6;
+}
+table th {
+    background-color: #009ca6;
+    color: #fff
+}
+
+table {
+  border: 2px solid #009ca6;
+  margin: auto;
+    width: 44%;
+
+}
+
+ table tr:hover td {
+   background-color: #009ca6;
+   color: #fff;
+   transition: .5s;
+   cursor: pointer;
+}
+table tr:not(:hover) td {
+ transition: .5s;
+}
+</style>
+
+<body>
+ <div class="block">
+	<h1 id="main">Генерация названия сюжетов</h1>
+
+    <form action="{{ url_for('getprediction')}}"method="post">
+    	<input class="form__input" id="name" placeholder="Введите данные" required="" type="text" name="height" />
+        <button type="submit" class="but">Сгенерировать</button>
+    </form>
+
+   <br>
+   <br>
+
+   <table class='goog-tab'>
+     <tbody>
+     <tr><th>Сгенерированные названия</th></tr>
+     <tr><td>Вакцинация населения препаратом Витамин Д (Духless)</td></tr>
+     <tr><td>Выборы депутатов МССР, назначение новых министров - СМИМ и газета "Коммерсант" </td></tr>
+     <tr><td>Роскосмосы о спутниках Марса и Сатурна. Новые спутники связи</td></tr>
+     <tr><td>Итоги торгов акциями компаний ТЭК в РФ.</td></tr>
+     <tr><td>Отчеты о движении фондовых рынков стран Европы. Итоги торгов акциями компаний ТЭК России.</td></tr>
+     <tr><td>Обширная продажа Яндексом своих акций.</td></tr>
+     <tr><td>Допрос местных лидеров и организаторов форумов.</td></tr>
+     <tr><td>Российские прививки Пандемии 2020г.</td></tr>
+     <tr><td>Курсы валют РФ.</td></tr>
+     <tr><td>Основные международные валюты</td></tr>
+     <tr><td>Дата начала строительства нового блока БелАЭС.</td></tr>
+     <tr><td>Встреча лидеров государств ОАЭ (версии 2-3) </td></tr>
+     <tr><td>Отчеты о торговых операциях по основной сессии (МТСБ) российских бирж</td></tr>
+     <tr><td>Торги оборонной промышленности стран НАТО</td></tr>
+     <tr><td>Замедление выработки электроэнергии на АЭС РБМК после снегопада</td></tr>
+     <tr><td>Результаты исследований рынков акций компаний ТЭК в России</td></tr>
+     <tr><td>Добыча драгметаллов в РФ</td></tr>
+     <tr><td>Цены производителей и продавцов валюты в США </td></tr>
+     <tr><td>Задержание на акции "Новое поколение" в Саратове</td></tr>
+     <tr><td>Снегопад на дорогах столицы.</td></tr>
+
+
+   </tbody>
+   </table>
+   {{ output }}
+
+ </div>
+
+
+</body>
+</html>
