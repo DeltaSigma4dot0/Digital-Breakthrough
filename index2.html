@@ -136,7 +136,7 @@ table tr:not(:hover) td {
 	<h1 id="main">Генерация названия сюжетов</h1>
 
     <form action="{{ url_for('getprediction')}}"method="post">
-    	<input class="form__input" id="name" placeholder="Введите данные" required="" type="text" name="height" />
+    	<textarea class="form__input" id="name" placeholder="Введите данные" required="" type="text" name="height" /> </textarea>
         <button type="submit" class="but">Сгенерировать</button>
     </form>
 
